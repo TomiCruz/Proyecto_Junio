@@ -96,9 +96,9 @@ public class Producto implements Serializable {
 	public void restarExistencia(Float disponibilidad) {
         this.disponibilidad -=disponibilidad;
     }
-
+	
+	
 	public boolean sinExistencia() {
         return this.disponibilidad <= 0;
     }
 }
-

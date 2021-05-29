@@ -13,6 +13,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 public class Usuario implements Serializable {
+	
+//cliente---HTML(css) Boostrap---Controller---Service---Respository----Modelo----BD(MySQL)
+//FrontEnd											BackEnd			
+//     MVC											DAO
+
+	
 	/**
 	 * 
 	 */	
@@ -98,3 +104,5 @@ public class Usuario implements Serializable {
 	
 	
 }
+
+
