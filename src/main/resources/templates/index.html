@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <meta charset="ISO-8859-1">
-<title>PV</title>
+<title>Login</title>
+
 </head>
+
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
+
+
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+	type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+	type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+	type="text/javascript"
+	src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	body{
+	background: teal;
+	}
+	.wrapper{
+	margin: 100px;
+	}
+	.form-signin{
+	max-width: 480px;
+	margin: 0 auto;
+	background-color: inactivecaptiontext;
+	padding: 15px 40px 50px;
+	border: 1px solid thin;
+	border-radius: 10px;
+	}
+	.form-signin .forms-signin-heading{
+	margin-bottom: 30;
+	
+	}
+	.form-signin input[type="text"], .form-signin input[type="password"]{
+	margin-bottom: 40px;
+
+	}
+	.form-signin .form-control{
+	padding: 20px;
+	
+	}
+</style>
+
+
+
 <body>
+<div>
+	<nav></nav>
+	</div>
+	<div class="wrapper"></div>
+	
+	<form class="form-signin" th:object="${usuarionuevo}" th:action="@{/login}" method="post">
+		<h2 class="form-signin-heading text center">Iniciar Sesion</h2>
+		<input type="text" class="form-control" name="username" placeholder="Usuario" required="" autofocus="" />
+		<input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
+		<button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+	</form>
 
 </body>
-</html>
+
+
