@@ -18,7 +18,6 @@ public class Usuario implements Serializable {
 //FrontEnd											BackEnd			
 //     MVC											DAO
 
-	
 	/**
 	 * 
 	 */	
@@ -99,10 +98,7 @@ public class Usuario implements Serializable {
 		return "Usuario [id=" + id + ", nombreusuario=" + userName + ", password=" + password + ", dni=" + dni
 				+ ", nombre=" + nombre + ", apellido=" + apellido + ", tipo=" + tipo + "]";
 	}
-	
-	
-	
-	
+
 }
 
 

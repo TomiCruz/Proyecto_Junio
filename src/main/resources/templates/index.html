@@ -1,68 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-<meta charset="ISO-8859-1">
-<title>Login</title>
-
-</head>
-
-<link th:rel="stylesheet" type="text/css"
-	th:href="@{webjars/bootstrap/4.5.0/css/bootstrap.min.css}" />
-
-
-<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
-	type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
-<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
-	type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
-<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
-	type="text/javascript"
-	src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Login</title>
 <style type="text/css">
 	body{
-	background: teal;
+	background: gray;
 	}
 	.wrapper{
-	margin: 100px;
+	margin: 130px;
 	}
 	.form-signin{
 	max-width: 480px;
 	margin: 0 auto;
-	background-color: inactivecaptiontext;
-	padding: 15px 40px 50px;
-	border: 1px solid thin;
-	border-radius: 10px;
+	background-color: white;
+	padding: 20px 60px 40px;
+	border: 1px solid #e5e5e5;
 	}
 	.form-signin .forms-signin-heading{
-	margin-bottom: 30;
-	
+	margin-bottom: 50;
 	}
 	.form-signin input[type="text"], .form-signin input[type="password"]{
-	margin-bottom: 40px;
-
+	margin-bottom: 30px;
 	}
 	.form-signin .form-control{
-	padding: 20px;
-	
+	padding: 12px;
 	}
 </style>
-
-
-
-<body>
-<div>
+</head>
+<body class="text-center">
+	<div>
 	<nav></nav>
 	</div>
 	<div class="wrapper"></div>
-	
-	<form class="form-signin" th:object="${usuarionuevo}" th:action="@{/login}" method="post">
-		<h2 class="form-signin-heading text center">Iniciar Sesion</h2>
-		<input type="text" class="form-control" name="username" placeholder="Usuario" required="" autofocus="" />
-		<input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
-		<button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+	   <form class="form-signin" th:object="${usuarionuevo}" th:action="@{/guardarproducto}" method="post">
+		<h2 class="form-signin-heading text center">Inicia Sesion</h2>
+		<input type="text" class="form-control" name="username" placeholder="Usuario" />
+		<input type="password" class="form-control" name="password" placeholder="password" />
+		<button type="submit" class="btn btn-lg btn-primary btn-block">Acceder</button>
 	</form>
-
 </body>
+</html>
+
 
 

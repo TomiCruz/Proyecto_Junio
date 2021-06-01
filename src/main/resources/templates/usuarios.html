@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado De Usuarios</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	></script>
+</head>
+<body>
+
+	<br>
+ <div class ="container mt-5">
+ 		<a type="button" class="btn btn-primary" th:href = "@{/altausuario}">Agregar Usuario?</a>
+ 		<hr>
+ 	
+ 	  <table  class="table table-striped table-hover table-bordered" >
+  <thead>
+    <tr>
+    
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Dni</th>
+      <th scope="col">Nombre de Usuario</th>
+      <th scope="col">Tipo de Usuario</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  	
+ <tr th:each = "usuario:${listausuarios}">
+      <td th:text = "${usuario.id}"></td>
+      <td th:text = "${usuario.nombre}"></td>
+      <td th:text = "${usuario.apellido}"></td>
+      <td th:text = "${usuario.dni}"></td>
+       <td th:text = "${usuario.nombreusuario}"></td>
+        
+         <td th:text = "${usuario.tipo}"></td>
+					<td ><a type="button" class="btn btn-outline-primary" th:href="@{/editarusuario/}+ ${usuario.id}" >EDITAR</a></td>
+     				 <td><a type="button" class="btn btn-outline-danger"th:href="@{/eliminar/}+ ${usuario.id}">ELIMINAR</a></td>
+				</tr>
+    
+  </tbody>
+</table>
+ <div>
+ <form action="Admin" class="form-group">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Volver">
+		</form>
+ </div>
+ </div>
+</body>
+</html>

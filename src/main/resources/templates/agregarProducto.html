@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8"/>
+<title>Agregar Producto</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+	></script>
+
+
+<style>
+	body{
+	background: gray;
+	}
+	
+	.Nuevo{
+	max-width: 480px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 70px 60px 80px;
+	border: 1px solid #e5e5e5;
+	margin-bottom: 30px;
+
+	}
+	
+</style>
+
+<body>
+<div class = "container">
+	<form th:action="@{/guardarproducto}" th:object = ${productonuevo} method = "Post">
+	<h2>Nuevo Producto</h2>
+	  		<div>
+				<input type="text" class="form-control" name="Nombre"
+					placeholder="Nombre de Producto" required="required" th:field = "*{nombre}">
+			</div>
+			<div>
+				<input type="text" class="form-control" name="codigo"
+					placeholder="Codigo de Producto" required="required" th:field = "*{codigo}">
+			</div>
+			<div>
+				<input  class="form-control" name="precio"
+					placeholder="Precio del Producto" required="required" th:field = "*{precio}">
+			</div>
+			<div>
+				<input type="text" class="form-control" name="disponibilidad"
+					placeholder="Disponibilidad del Producto" required="required" th:field = "*{disponibilidad}">
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Guardar Producto Nuevo</button>
+</form>
+</div>
+<hr>
+<div>
+<form action="Admin" class="form-group">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Cancelar">
+		</form>
+</div>
+</body>
+</html>

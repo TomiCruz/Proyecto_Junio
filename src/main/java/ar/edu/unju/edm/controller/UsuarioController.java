@@ -3,6 +3,7 @@ package ar.edu.unju.edm.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ import ar.edu.unju.edm.service.IUsuarioService;
 
 @Controller
 public class UsuarioController {
-	@Autowired
+	@Qualifier
 	Usuario unUsuario;
 	@Autowired
 	private IUsuarioService iUsuarioService;
@@ -44,6 +45,7 @@ public class UsuarioController {
 		model.addAttribute("usuarionuevo",new Usuario());
 		return "agregarUsuario";
 	}
+
 	@PostMapping("/guardarusuario")
 	public String guardarUsu(Model model, Usuario usuarionuevo) {
 		Usuario usuario = iUsuarioService.FindById(usuarionuevo.getId()!=null?usuarionuevo.getId():0);
